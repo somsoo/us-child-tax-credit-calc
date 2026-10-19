@@ -1,28 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Child Tax Credit Calculator 2026 - Under maintenance</title>
-<meta name="robots" content="noindex, nofollow">
-<meta name="site-status" content="maintenance">
-<meta name="description" content="This tool is temporarily offline while it is rebuilt.">
+<title>Child Tax Credit Calculator 2026</title>
+<meta name="description" content="Calculate your 2026 Child Tax Credit, phaseouts, and refundable refund amount.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://us-child-tax-credit-calc.enjoy-onepage.com/">
+<meta name="theme-color" content="#16a34a">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Child Tax Credit Calculator 2026">
+<meta property="og:title" content="Child Tax Credit Calculator 2026">
+<meta property="og:description" content="Calculate your 2026 Child Tax Credit, phaseouts, and refundable refund amount.">
+<meta property="og:url" content="https://us-child-tax-credit-calc.enjoy-onepage.com/">
+<meta property="og:image" content="https://us-child-tax-credit-calc.enjoy-onepage.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Child Tax Credit Calculator 2026">
+<meta name="twitter:description" content="Calculate your 2026 Child Tax Credit, phaseouts, and refundable refund amount.">
+<meta name="twitter:image" content="https://us-child-tax-credit-calc.enjoy-onepage.com/og-image.png">
+<link rel="alternate" type="application/rss+xml" title="Child Tax Credit RSS" href="https://us-child-tax-credit-calc.enjoy-onepage.com/rss.xml">
+<link rel="sitemap" type="application/xml" href="https://us-child-tax-credit-calc.enjoy-onepage.com/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://us-child-tax-credit-calc.enjoy-onepage.com/#webapp",
+      "name": "Child Tax Credit Calculator 2026",
+      "url": "https://us-child-tax-credit-calc.enjoy-onepage.com/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "inLanguage": "en",
+      "description": "Interactive federal tax calculator estimating IRS Child Tax Credit (CTC) and Additional Child Tax Credit (ACTC) refunds and phaseout thresholds.",
+      "image": "https://us-child-tax-credit-calc.enjoy-onepage.com/og-image.png",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://us-child-tax-credit-calc.enjoy-onepage.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much is the Child Tax Credit per child for the 2026 tax year?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Child Tax Credit provides up to $2,000 per qualifying child under age 17. Up to $1,700 per child is refundable as the Additional Child Tax Credit (ACTC)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the income phaseout thresholds for the Child Tax Credit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phaseout begins at $400,000 Modified AGI for married couples filing jointly and $200,000 for single, head of household, and married filing separately filers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What qualifications must a child meet to be eligible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The child must be under 17 at year end, possess a valid Social Security Number, be claimed as your dependent, live with you for more than half the year, and not provide over half of their own support."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6946654760086847" crossorigin="anonymous"></script>
 <style>
-  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; }
-  main { max-width: 560px; margin: 12vh auto; padding: 32px 24px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; }
-  h1 { font-size: 1.4rem; margin: 0 0 12px; }
-  p { line-height: 1.6; color: #334155; }
-  a { color: #1d4ed8; font-weight: 600; }
-  .tag { display: inline-block; font-size: .8rem; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 999px; padding: 4px 10px; margin-bottom: 14px; }
+  :root {
+    --primary: #16a34a;
+    --primary-hover: #15803d;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 0 16px;
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 24px 0 48px; }
+  header { text-align: center; margin-bottom: 24px; }
+  header h1 { font-size: 1.85rem; font-weight: 800; color: #1e293b; margin-bottom: 6px; }
+  header p { font-size: 0.95rem; color: var(--text-muted); }
+
+  .manual-ad-box {
+    margin: 16px auto;
+    text-align: center;
+    background: transparent;
+  }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  @media (min-width: 768px) {
+    .grid2 { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+  .card h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .form-group { margin-bottom: 14px; }
+  .form-label { display: block; font-size: 0.82rem; font-weight: 600; color: #334155; margin-bottom: 4px; }
+  .form-input, .form-select {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+  }
+  .form-input:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(22,163,74,0.12);
+  }
+
+  .summary-banner {
+    background: #ecfdf5;
+    border: 2px solid #a7f3d0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .summary-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #047857; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .summary-value { font-size: 2.1rem; font-weight: 800; color: #065f46; font-family: ui-monospace, SFMono-Regular, monospace; }
+  .summary-sub { font-size: 0.8rem; color: #059669; font-weight: 600; margin-top: 4px; }
+
+  .breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+  .breakdown-table tr { border-bottom: 1px solid #f1f5f9; }
+  .breakdown-table tr:last-child { border-bottom: none; }
+  .breakdown-table td { padding: 9px 4px; }
+  .breakdown-table .k { color: var(--text-muted); font-weight: 500; }
+  .breakdown-table .v { text-align: right; font-weight: 700; color: #1e293b; }
+
+  .phaseout-tag {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .phaseout-none { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+  .phaseout-active { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+  .phaseout-full { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+  .info-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .info-section h2 { font-size: 1.2rem; font-weight: 700; color: #1e293b; margin-bottom: 16px; }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) {
+    .info-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .how-step {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .how-step .step-num {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    border-radius: 50%;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .how-step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: #1e293b; }
+  .how-step p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
+
+  .faq-list { margin-top: 14px; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h3 { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  .faq-item p { font-size: 0.85rem; color: #475569; line-height: 1.5; }
+
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0f172a;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: .85rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+    z-index: 9999;
+  }
+  .toast.show { opacity: 1; }
+
+  footer {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  footer a { color: var(--text-muted); text-decoration: none; margin: 0 8px; }
+  footer a:hover { color: var(--text-main); text-decoration: underline; }
 </style>
 </head>
 <body>
-<main>
-  <span class="tag">Under maintenance</span>
-  <h1>Child Tax Credit Calculator 2026</h1>
-  <p>This tool is temporarily offline. We found that the previous version did not work the way it was described, so we took it down while we rebuild it properly.</p>
-  <p>Please check back later.</p>
-  <p><a href="https://enjoy-onepage.com/">Browse our other free tools</a></p>
-</main>
+<div class="container">
+  <header>
+    <h1>Child Tax Credit Calculator 2026</h1>
+    <p>Estimate your IRS Child Tax Credit (CTC), phaseouts, and refundable ACTC payout.</p>
+  </header>
+
+  <!-- ADSENSE START: top -->
+  <div class="manual-ad-box ad-top-banner" style="width: 100%; max-width: 960px; min-height: 100px; margin: 0 auto 16px; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 100px;"
+         data-ad-client="ca-pub-6946654760086847"
+         data-ad-slot="3824727725"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: top -->
+
+  <div class="grid2">
+    <section class="card">
+      <h2>Tax Information &amp; Dependents</h2>
+
+      <div class="form-group">
+        <label class="form-label" for="filingStatus">Filing Status</label>
+        <select id="filingStatus" class="form-select">
+          <option value="mfj">Married Filing Jointly (Phaseout: $400k)</option>
+          <option value="hoh" selected>Head of Household (Phaseout: $200k)</option>
+          <option value="single">Single Filer (Phaseout: $200k)</option>
+          <option value="mfs">Married Filing Separately (Phaseout: $200k)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="magi">Modified Adjusted Gross Income (MAGI) ($)</label>
+        <input type="number" id="magi" class="form-input" value="75000" min="0" step="1000">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="numChildren">Qualifying Children (Under Age 17, $2,000 ea)</label>
+        <input type="number" id="numChildren" class="form-input" value="2" min="0" max="15">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="numOther">Other Dependents (Age 17+, Elderly Parents, $500 ea)</label>
+        <input type="number" id="numOther" class="form-input" value="0" min="0" max="15">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="earnedIncome">Earned Income (W-2 Wages, Self-Employment) ($)</label>
+        <input type="number" id="earnedIncome" class="form-input" value="72000" min="0" step="1000">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="taxLiability">Estimated Federal Tax Liability Before Credits ($)</label>
+        <input type="number" id="taxLiability" class="form-input" value="3500" min="0" step="100">
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Estimated Tax Benefit</h2>
+
+      <div class="summary-banner">
+        <div class="summary-title">Total Estimated Tax Benefit</div>
+        <div class="summary-value" id="valTotalBenefit">$4,000</div>
+        <div class="summary-sub" id="valBenefitSub">Direct tax savings &amp; potential refund</div>
+      </div>
+
+      <div id="phaseoutBanner" class="phaseout-tag phaseout-none">
+        <span>✓ No Phaseout: Full credit eligibility</span>
+      </div>
+
+      <table class="breakdown-table">
+        <tbody>
+          <tr>
+            <td class="k">Gross Potential Credit:</td>
+            <td class="v" id="valGrossCredit">$4,000</td>
+          </tr>
+          <tr>
+            <td class="k">MAGI Phaseout Reduction:</td>
+            <td class="v" id="valPhaseoutReduction" style="color: #dc2626;">-$0</td>
+          </tr>
+          <tr>
+            <td class="k">Net Allowable Credit:</td>
+            <td class="v" id="valNetCredit">$4,000</td>
+          </tr>
+          <tr>
+            <td class="k">Non-Refundable Offset (Taxes Wiped):</td>
+            <td class="v" id="valNonRefundable">$3,500</td>
+          </tr>
+          <tr>
+            <td class="k">Refundable ACTC Payout (Cash Refund):</td>
+            <td class="v" id="valRefundable" style="color: #059669;">+$500</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.45;">
+        IRS statutory rules: $2,000 max credit per child under 17, up to $1,700 refundable via Additional Child Tax Credit (15% of earned income above $2,500). Phaseout rate is $50 per $1,000 of MAGI above threshold.
+      </p>
+    </section>
+  </div>
+  <!-- ADSENSE START: mid -->
+  <div class="manual-ad-box ad-mid-banner" style="width: 100%; max-width: 960px; min-height: 250px; margin: 20px auto; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 250px;"
+         data-ad-client="ca-pub-6946654760086847"
+         data-ad-slot="1186914926"
+         data-ad-format="rectangle,horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: mid -->
+
+  <section class="info-section">
+    <h2>How the Child Tax Credit Works</h2>
+    <div class="info-grid">
+      <div class="how-step">
+        <span class="step-num">1</span>
+        <h3>Count Dependents</h3>
+        <p>Enter the number of qualifying children under 17 and any qualifying older dependents.</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">2</span>
+        <h3>Check Phaseouts</h3>
+        <p>The calculator automatically applies IRS MAGI limits ($400k joint, $200k others).</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">3</span>
+        <h3>Calculate Refund</h3>
+        <p>See exactly how much reduces your tax bill and how much is paid out as a cash refund.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item"><h3>How much is the Child Tax Credit per child for the 2026 tax year?</h3><p>The Child Tax Credit provides up to $2,000 per qualifying child under age 17. Up to $1,700 per child is refundable as the Additional Child Tax Credit (ACTC).</p></div>
+      <div class="faq-item"><h3>What are the income phaseout thresholds for the Child Tax Credit?</h3><p>Phaseout begins at $400,000 Modified AGI for married couples filing jointly and $200,000 for single, head of household, and married filing separately filers.</p></div>
+      <div class="faq-item"><h3>What qualifications must a child meet to be eligible?</h3><p>The child must be under 17 at year end, possess a valid Social Security Number, be claimed as your dependent, live with you for more than half the year, and not provide over half of their own support.</p></div>
+    </div>
+  </section>
+
+  <!-- ADSENSE START: bottom -->
+  <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; min-height: 280px; margin: 24px auto 16px; text-align: center; background: transparent;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 280px;"
+         data-ad-client="ca-pub-6946654760086847"
+         data-ad-slot="3416334507"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <!-- ADSENSE END: bottom -->
+
+  <div id="global-ux-toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer>
+    <p>&copy; 2026 Child Tax Credit Calculator. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="/privacy.html">Privacy Policy</a> &bull;
+      <a href="/terms.html">Terms of Service</a> &bull;
+      <a href="/disclaimer.html">Disclaimer</a>
+    </p>
+  </footer>
+</div>
+
+<!-- LOGIC START -->
+<script>
+(function() {
+  const filingStatusEl = document.getElementById('filingStatus');
+  const magiEl = document.getElementById('magi');
+  const numChildrenEl = document.getElementById('numChildren');
+  const numOtherEl = document.getElementById('numOther');
+  const earnedIncomeEl = document.getElementById('earnedIncome');
+  const taxLiabilityEl = document.getElementById('taxLiability');
+
+  const valTotalBenefitEl = document.getElementById('valTotalBenefit');
+  const valBenefitSubEl = document.getElementById('valBenefitSub');
+  const valGrossCreditEl = document.getElementById('valGrossCredit');
+  const valPhaseoutReductionEl = document.getElementById('valPhaseoutReduction');
+  const valNetCreditEl = document.getElementById('valNetCredit');
+  const valNonRefundableEl = document.getElementById('valNonRefundable');
+  const valRefundableEl = document.getElementById('valRefundable');
+  const phaseoutBanner = document.getElementById('phaseoutBanner');
+
+  function fmt(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function calculate() {
+    const status = filingStatusEl.value;
+    const magi = Math.max(0, parseFloat(magiEl.value) || 0);
+    const children = Math.max(0, parseInt(numChildrenEl.value, 10) || 0);
+    const other = Math.max(0, parseInt(numOtherEl.value, 10) || 0);
+    const earnedIncome = Math.max(0, parseFloat(earnedIncomeEl.value) || 0);
+    const taxLiability = Math.max(0, parseFloat(taxLiabilityEl.value) || 0);
+
+    // 1. Gross credit: $2000 per child, $500 per other dependent
+    const grossCredit = (children * 2000) + (other * 500);
+
+    // 2. Phaseout
+    const threshold = (status === 'mfj') ? 400000 : 200000;
+    let reduction = 0;
+    if (magi > threshold) {
+      const excess = magi - threshold;
+      reduction = Math.ceil(excess / 1000) * 50;
+    }
+    const netCredit = Math.max(0, grossCredit - reduction);
+
+    // 3. Phaseout status display
+    if (reduction === 0) {
+      phaseoutBanner.className = 'phaseout-tag phaseout-none';
+      phaseoutBanner.textContent = '✓ No Phaseout: Full credit eligibility (MAGI under ' + fmt(threshold) + ')';
+    } else if (netCredit > 0) {
+      phaseoutBanner.className = 'phaseout-tag phaseout-active';
+      phaseoutBanner.textContent = '⚠ Phaseout Active: Credit reduced by ' + fmt(reduction) + ' (MAGI over ' + fmt(threshold) + ')';
+    } else {
+      phaseoutBanner.className = 'phaseout-tag phaseout-full';
+      phaseoutBanner.textContent = '✕ Fully Phased Out: MAGI exceeds credit phaseout ceiling';
+    }
+
+    // 4. Non-refundable portion (wipes out tax liability up to netCredit)
+    const nonRefundable = Math.min(taxLiability, netCredit);
+    const remainingCredit = netCredit - nonRefundable;
+
+    // 5. Refundable portion (ACTC)
+    // Only qualifying children under 17 are eligible for ACTC (up to $1,700 per child)
+    let refundable = 0;
+    if (remainingCredit > 0 && children > 0) {
+      const maxActcCap = children * 1700;
+      const earnedIncomeLimit = Math.max(0, (earnedIncome - 2500) * 0.15);
+      refundable = Math.min(remainingCredit, maxActcCap, earnedIncomeLimit);
+    }
+
+    const totalBenefit = nonRefundable + refundable;
+
+    valTotalBenefitEl.textContent = fmt(totalBenefit);
+    valGrossCreditEl.textContent = fmt(grossCredit);
+    valPhaseoutReductionEl.textContent = (reduction > 0) ? ('-' + fmt(reduction)) : '$0';
+    valNetCreditEl.textContent = fmt(netCredit);
+    valNonRefundableEl.textContent = fmt(nonRefundable);
+    valRefundableEl.textContent = (refundable > 0) ? ('+' + fmt(refundable)) : '$0';
+
+    if (refundable > 0 && nonRefundable > 0) {
+      valBenefitSubEl.textContent = fmt(nonRefundable) + ' tax offset + ' + fmt(refundable) + ' cash refund';
+    } else if (refundable > 0) {
+      valBenefitSubEl.textContent = fmt(refundable) + ' refundable ACTC check';
+    } else if (nonRefundable > 0) {
+      valBenefitSubEl.textContent = fmt(nonRefundable) + ' tax bill reduction';
+    } else {
+      valBenefitSubEl.textContent = '$0 benefit';
+    }
+  }
+
+  [filingStatusEl, magiEl, numChildrenEl, numOtherEl, earnedIncomeEl, taxLiabilityEl].forEach(el => {
+    el.addEventListener('input', calculate);
+    el.addEventListener('change', calculate);
+  });
+
+  calculate();
+})();
+</script>
+<!-- LOGIC END -->
 </body>
 </html>
